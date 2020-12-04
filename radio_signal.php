@@ -1,5 +1,6 @@
 <?php 
 
+// Your code here!
 // test case function that outputs signals represented as integers ( 1 - 15 )
 function radio_transmissions(){
 	$signals = array();
@@ -16,15 +17,16 @@ function radio_transmissions(){
 }
 
 $signals = radio_transmissions();
-// print_r($signals);
-
 
 // function to accept 32 bit numbers - and reduce them down to integers
 function signal_decoder($signals){
+    $translated_signals = [];
 	foreach($signals as $signal){
 		$signal_binary =  bindec($signal);
 		$signal_full_translated = bindec($signal_binary);
+		$translated_signals[] = $signal_full_translated;
 	}
-
+	return $translated_signals;
 }
 
+print_r($translated_signals = signal_decoder($signals));
