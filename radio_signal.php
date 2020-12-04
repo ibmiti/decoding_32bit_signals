@@ -29,3 +29,58 @@ function signal_decoder($signals){
 }
 
 print_r($translated_signals = signal_decoder($signals));
+
+
+
+$configJSON = '
+[
+{
+	"id": 1,
+	"rule-name": "greater than 10",
+	"type": "comparison",
+	"check": ">",
+	"value": 10
+},
+{
+	"id": 2,
+	"rule-name": "equal to 10",
+	"type": "comparison",
+	"check": "=",
+	"value": 10
+},
+{
+	"id": 3,
+	"rule-name": "less than 10",
+	"type": "comparison",
+	"check": "<",
+	"value": 10
+},
+
+{
+	"id": 4,
+	"rule-name": "rose more than 5 over 7 numbers",
+	"type": "delta",
+	"check": ">",
+	"change": 5,
+	"over": 7
+},
+{
+	"id": 5,
+	"rule-name": "rose exactly 5 over 7 numbers",
+	"type": "delta",
+	"check": "=",
+	"change": 5,
+	"over": 7
+},
+{
+	"id": 6,
+	"rule-name": "less than 5 over 7 numbers",
+	"type": "delta",
+	"check": "<",
+	"change": 5,
+	"over": 7
+}
+]';
+
+$config = json_decode($configJSON, true);
+print_r($config[0]);
