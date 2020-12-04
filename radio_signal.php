@@ -16,21 +16,30 @@ $possible_decoded_output_radio_signals = [
 3
 ];
 
+// test case function that outputs signals represented as integers ( 1 - 15 )
+function radio_transmissions(){
+	$signals = array();
+	// radio randomly generates signals between 1 - 15
+	$signal_count = 0;
+	$max_signal_buffer = 30;
+	for($i = $signal_count; $i <= $max_signal_buffer; $i++)
+	{
+		$transmission_message_code = sprintf("%032b", decbin(rand(1,15))); 
+		$signals[] = $transmission_message_code;
+		$signal_count += 1;
+	}
+	return $signals;
+}
+
+$signals = radio_transmissions();
+print_r($signals);
+
+
 // function to accept 32 bit numbers - and reduce them down to integers
 function signal_decoder($signal){
 	$signal_binary =  bindec($signal);
 	echo bindec($signal_binary);
 }
-
-
-
-$signal = sprintf("%032b", decbin(7));
-$signal2 = sprintf("%032b", decbin(9));
-signal_decoder($signal);
-signal_decoder($signal2);
-// incoming test signal 
-
-
 
 
 // shorten arr name as it will be used again , avoid brevity 
