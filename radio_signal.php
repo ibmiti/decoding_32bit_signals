@@ -24,23 +24,24 @@ $twelve_decoded = sprintf(bindec($twelve));
 sprintf("%032b",decbin($possible_decoded_output_radio_signals[2]));
 
 
+$seven = 7;
+$seven_encoded = sprintf("%032b", decbin($seven));
+
 
 // function to accept 32 bit numbers - and reduce them down to integers
 
 function decode_radio_trans(string $n){
-
+	$binary_representation = decbin($n);
+	function decode_to_int($binary_representation) {
+		return $decoded_val = decbin($binary_representation);
+	}
+	echo $decoded_val;
 }
-
+$signal = sprintf("%032b", decbin(7));
+decode_radio_trans($signal);
 // incoming test signal 
 
 
-
-php > echo intval("00000000000000000000001111110010");
-1111110010
-php > echo $foo= bindec("1111110010");
-1010
-php > echo $f = bindec("1010");
-10
 
 
 // shorten arr name as it will be used again , avoid brevity 
