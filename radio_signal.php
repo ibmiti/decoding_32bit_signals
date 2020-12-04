@@ -16,19 +16,31 @@ $possible_decoded_output_radio_signals = [
 3
 ];
 
-// representation of each in its 32 bit format :
+# function that converts radio signal from 32bit down to base non float int
 
-$possible_decoded_output_radio_signals[0];
-$possible_decoded_output_radio_signals[1];
-$possible_decoded_output_radio_signals[2];
-$possible_decoded_output_radio_signals[3];
-$possible_decoded_output_radio_signals[4];
-$possible_decoded_output_radio_signals[5];
-$possible_decoded_output_radio_signals[6];
-$possible_decoded_output_radio_signals[7];
-$possible_decoded_output_radio_signals[8];
-$possible_decoded_output_radio_signals[9];
-$possible_decoded_output_radio_signals[10];
+$ten = sprintf("%032b",decbin($possible_decoded_output_radio_signals[0]));
+$twelve = sprintf("%032b",decbin($possible_decoded_output_radio_signals[1]));
+$twelve_decoded = sprintf(bindec($twelve));
+sprintf("%032b",decbin($possible_decoded_output_radio_signals[2]));
+
+
+
+// function to accept 32 bit numbers - and reduce them down to integers
+
+function decode_radio_trans(string $n){
+
+}
+
+// incoming test signal 
+
+
+
+php > echo intval("00000000000000000000001111110010");
+1111110010
+php > echo $foo= bindec("1111110010");
+1010
+php > echo $f = bindec("1010");
+10
 
 
 // shorten arr name as it will be used again , avoid brevity 
