@@ -16,18 +16,6 @@ $possible_decoded_output_radio_signals = [
 3
 ];
 
-# function that converts radio signal from 32bit down to base non float int
-
-$ten = sprintf("%032b",decbin($possible_decoded_output_radio_signals[0]));
-$twelve = sprintf("%032b",decbin($possible_decoded_output_radio_signals[1]));
-$twelve_decoded = sprintf(bindec($twelve));
-sprintf("%032b",decbin($possible_decoded_output_radio_signals[2]));
-
-
-$seven = 7;
-$seven_encoded = sprintf("%032b", decbin($seven));
-
-
 // function to accept 32 bit numbers - and reduce them down to integers
 function signal_decoder($signal){
 	$signal_binary =  bindec($signal);
