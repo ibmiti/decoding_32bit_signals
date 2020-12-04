@@ -1,6 +1,5 @@
 <?php 
 
-// Your code here!
 // test case function that outputs signals represented as integers ( 1 - 15 )
 function radio_transmissions(){
 	$signals = array();
