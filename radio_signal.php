@@ -29,16 +29,17 @@ $seven_encoded = sprintf("%032b", decbin($seven));
 
 
 // function to accept 32 bit numbers - and reduce them down to integers
-
-function decode_radio_trans(string $n){
-	$binary_representation = decbin($n);
-	function decode_to_int($binary_representation) {
-		return $decoded_val = decbin($binary_representation);
-	}
-	echo $decoded_val;
+function signal_decoder($signal){
+	$signal_binary =  bindec($signal);
+	echo bindec($signal_binary);
 }
+
+
+
 $signal = sprintf("%032b", decbin(7));
-decode_radio_trans($signal);
+$signal2 = sprintf("%032b", decbin(9));
+signal_decoder($signal);
+signal_decoder($signal2);
 // incoming test signal 
 
 
